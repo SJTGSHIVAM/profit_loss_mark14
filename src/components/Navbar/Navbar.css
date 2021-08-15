@@ -2,7 +2,7 @@ a {
   text-decoration: none;
 }
 .navbar {
-  background-color: #561f1f00;
+  background-color: #ffffff;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@ a {
 }
 
 .nav-logo {
-  color: #ffdd40;
+  color: #406dff;
   align-items: center;
   margin-left: 20px;
   cursor: pointer;
@@ -41,7 +41,7 @@ a {
 }
 
 .nav-links {
-  color: #fff;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
@@ -67,12 +67,12 @@ a {
 
 .nav-item:hover:after {
   width: 100%;
-  background: #ffdd40;
+  background: #406dff;
 }
 
 .nav-item .active {
-  color: #ffdd40;
-  border: 1px solid #ffdd40;
+  color: #406dff;
+  border: 1px solid #406dff;
 }
 
 .nav-icon {
@@ -84,7 +84,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-top: 1pxsolid #fff;
+    border-top: 1px;
     position: absolute;
     top: 80px;
     left: -110%;
@@ -93,14 +93,14 @@ a {
   }
 
   .nav-menu.active {
-    background: #01010df2;
+    background: #406dff;
     left: 0px;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
   }
   .nav-item .active {
-    color: #ffdd40;
+    color: #ffffff;
     border: none;
   }
   .nav-links {
@@ -118,6 +118,6 @@ a {
     font-size: 1.8rem;
 
     cursor: pointer;
-    color: #ffdd40;
+    color: #406dff;
   }
 }

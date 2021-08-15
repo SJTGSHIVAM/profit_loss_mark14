@@ -4,10 +4,9 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./components/About";
-import RecList from "./components/RecList";
 
-import Rec from "./components/Rec";
 import NotFound from "./components/notfound";
+import ProfitCalc from "./components/ProfitCalc";
 
 function App() {
   return (
@@ -15,8 +14,7 @@ function App() {
       {" "}
       <Navbar />
       <Switch>
-        <Route path="/" component={() => <RecList top={"dsa"} />} exact />
-        <Route path="/rec/:id/:topic" component={Rec} />
+        <Route path="/" component={ProfitCalc} exact />
         <Route path="/about" exact component={About} />
         <Route path="/" component={NotFound} />
       </Switch>
