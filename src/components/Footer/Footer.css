@@ -1,14 +1,19 @@
 .footerLink {
   color: #406dff;
+  padding: 1rem;
 }
-footer ul {
+ul {
+  list-style: none;
   display: flex;
-  justify-content: space-evenly;
-  /* align-items: flex-end; */
+  flex-direction: row;
+  justify-content: center;
 }
+
 footer {
-  background-color: aliceblue;
+  background-color: #eaf4ff;
+  margin-top: 2rem;
 }
+
 .legacyText {
   text-align: center;
 }

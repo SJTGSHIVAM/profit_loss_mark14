@@ -2,6 +2,8 @@ import { useState } from "react";
 import lossimg from "../../img/loss.gif";
 import profitimg from "../../img/profit.webp";
 import "./ProfitCalc.css";
+import bills from "../../img/bills.jpg";
+
 let isProfitcopy = false;
 let isCalcDone = false;
 let profitPercentcopy = "";
@@ -22,7 +24,7 @@ const ProfitCalc = () => {
       !isProfit
     );
     if (!isCalcDone || parseFloat(profitPercentcopy) <= 50) {
-      document.body.style.backgroundImage = `url("")`;
+      document.body.style.backgroundImage = `url("${String(bills)}")`;
     } else {
       if (!isProfitcopy) {
         document.body.style.backgroundImage = `url(${String(lossimg)})`;
@@ -64,7 +66,7 @@ const ProfitCalc = () => {
 
       <section className="input">
         <label>
-          <span className="label">Purchase Price</span>
+          <div className="label">Purchase Price</div>
           <input
             type="number"
             value={purchasePrice}
@@ -78,7 +80,7 @@ const ProfitCalc = () => {
         </label>
 
         <label>
-          <span className="label"> Stock Quantity</span>
+          <div className="label"> Stock Quantity</div>
           <input
             type="number"
             value={quatity}
@@ -92,7 +94,7 @@ const ProfitCalc = () => {
         </label>
 
         <label>
-          <span className="label"> Current Price</span>
+          <div className="text"> Current Price</div>
           <input
             type="number"
             value={sellPrice}
@@ -104,27 +106,28 @@ const ProfitCalc = () => {
             }}
           />
         </label>
-
-        <button
-          onClick={() => {
-            if (
-              invalidateAmount(purchasePrice) ||
-              invalidateAmount(quatity) ||
-              invalidateAmount(sellPrice)
-            ) {
-              setValall(false);
-            } else {
-              isCalcDone = true;
-              setValall(true);
-              console.log(isCalcDone);
-              calcRevenue(purchasePrice, quatity, sellPrice);
-            }
-          }}
-        >
-          Check
-        </button>
       </section>
-      <span>
+
+      <button
+        className="button"
+        onClick={() => {
+          if (
+            invalidateAmount(purchasePrice) ||
+            invalidateAmount(quatity) ||
+            invalidateAmount(sellPrice)
+          ) {
+            setValall(false);
+          } else {
+            isCalcDone = true;
+            setValall(true);
+            console.log(isCalcDone);
+            calcRevenue(purchasePrice, quatity, sellPrice);
+          }
+        }}
+      >
+        Check
+      </button>
+      <div>
         {valall
           ? isCalcDone &&
             (isProfit
@@ -137,7 +140,7 @@ const ProfitCalc = () => {
                 "%. Your total loss is ₹" +
                 profit)
           : "Please enter values greater than 0 (only numbers are allowed in above fields)"}
-      </span>
+      </div>
     </div>
   );
 };
