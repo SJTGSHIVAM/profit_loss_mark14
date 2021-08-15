@@ -6,3 +6,6 @@ footer ul {
   justify-content: space-evenly;
   /* align-items: flex-end; */
 }
+.legacyText {
+  text-align: center;
+}

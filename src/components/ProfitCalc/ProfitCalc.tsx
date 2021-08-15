@@ -1,4 +1,6 @@
 import { useState } from "react";
+import lossimg from "../../img/loss.gif";
+import profitimg from "../../img/profit.webp";
 import "./ProfitCalc.css";
 const ProfitCalc = () => {
   const [purchasePrice, setPurchasePrice] = useState<number>(NaN);
@@ -28,8 +30,24 @@ const ProfitCalc = () => {
       setProfitPercent((-1 * percent).toFixed(2));
     }
   };
+
   return (
-    <>
+    <div
+      style={
+        !isCalcDone || parseFloat(profitPercent) <= 50
+          ? {
+              backgroundImage: ``,
+            }
+          : !isProfit
+          ? {
+              backgroundImage: `url(${String(lossimg)})`,
+            }
+          : {
+              backgroundImage: `url(${String(profitimg)})`,
+            }
+      }
+      className="mid-cover"
+    >
       <div className="bcard">
         <header className="head">
           <h1>Lets check your returns</h1>
@@ -108,7 +126,7 @@ const ProfitCalc = () => {
             : "Please enter values greater than 0 (only numbers are allowed in above fields)"}
         </span>
       </div>
-    </>
+    </div>
   );
 };
 export default ProfitCalc;
