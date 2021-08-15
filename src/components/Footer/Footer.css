@@ -1,0 +1,8 @@
+.footerLink {
+  color: #ffdd40;
+}
+footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: flex-end; */
+}

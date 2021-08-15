@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.head {
+  color: #ffdd40;
+  text-align: center;
+}
+
+.about {
+  text-align: justify;
+  margin: 1rem;
+  margin-top: 0;
+}
+
+.bcard {
+  background-color: #f8f9fa07;
+  margin: auto;
+  border-radius: 10px;
+  padding: 0 0 20px 0;
+  box-shadow: 5px 5px 13px 0px rgba(50, 50, 50, 0.39);
+  max-width: 800px;
+}
