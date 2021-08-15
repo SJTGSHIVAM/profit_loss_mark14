@@ -4,13 +4,30 @@ const ProfitCalc = () => {
   const [purchasePrice, setPurchasePrice] = useState<number>(NaN);
   const [quatity, setQuatity] = useState<number>(NaN);
   const [sellPrice, setSellPrice] = useState<number>(NaN);
+  const [profit, setProfit] = useState<string>("");
+  const [profitPercent, setProfitPercent] = useState<string>("");
+  const [isCalcDone, setIsCalcDone] = useState(false);
+  const [valall, setValall] = useState(true);
+  const [isProfit, setIsProfit] = useState(false);
 
-  const [valall, setValall] = useState(false);
-
-  const [revenue, setRevenue] = useState<number>(NaN);
-
-  const invalidateAmount = (e: number): boolean => isNaN(e);
-
+  const invalidateAmount = (e: number): boolean => isNaN(e) || e < 1;
+  const calcRevenue = (
+    purchasePrice: number,
+    quatity: number,
+    sellPrice: number
+  ) => {
+    let loss: number = (purchasePrice - sellPrice) * quatity;
+    let percent: number = (loss / purchasePrice) * 100;
+    if (loss >= 1) {
+      setIsProfit(false);
+      setProfit(loss.toFixed(2));
+      setProfitPercent(percent.toFixed(2));
+    } else {
+      setIsProfit(true);
+      setProfit((-1 * loss).toFixed(2));
+      setProfitPercent((-1 * percent).toFixed(2));
+    }
+  };
   return (
     <>
       <div className="bcard">
@@ -27,6 +44,7 @@ const ProfitCalc = () => {
               placeholder={"Enter cost price of stock"}
               onChange={(e) => {
                 setPurchasePrice(parseFloat(e.target.value));
+                setIsCalcDone(false);
               }}
             />
           </label>
@@ -39,6 +57,7 @@ const ProfitCalc = () => {
               placeholder={"Enter quantity of stock"}
               onChange={(e) => {
                 setQuatity(parseFloat(e.target.value));
+                setIsCalcDone(false);
               }}
             />
           </label>
@@ -51,6 +70,7 @@ const ProfitCalc = () => {
               placeholder={"Enter current price of stock"}
               onChange={(e) => {
                 setSellPrice(parseFloat(e.target.value));
+                setIsCalcDone(false);
               }}
             />
           </label>
@@ -64,13 +84,29 @@ const ProfitCalc = () => {
               ) {
                 setValall(false);
               } else {
+                setIsCalcDone(true);
+                setValall(true);
+                calcRevenue(purchasePrice, quatity, sellPrice);
               }
             }}
           >
             Check
           </button>
         </section>
-        <span>{revenue}</span>
+        <span>
+          {valall
+            ? isCalcDone &&
+              (isProfit
+                ? "You gained " +
+                  profitPercent +
+                  "%. Your total profit is ₹" +
+                  profit
+                : "You lost " +
+                  profitPercent +
+                  "%. Your total loss is ₹" +
+                  profit)
+            : "Please enter values greater than 0 (only numbers are allowed in above fields)"}
+        </span>
       </div>
     </>
   );
