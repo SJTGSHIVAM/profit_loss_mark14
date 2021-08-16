@@ -9,8 +9,17 @@
 
 .about {
   text-align: justify;
+  font-weight: 600;
   margin: 1rem;
   margin-top: 0;
+}
+.about-feature {
+  display: block;
+}
+.about-feature > li {
+  display: block;
+  /* color: red; */
+  list-style: armenian;
 }
 
 .bcard {

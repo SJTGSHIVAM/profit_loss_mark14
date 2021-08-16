@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web app that calculate net and percent profit or loss and a trade give prices and quantity of stocks. Built using ReactJS.
+
+# Live Link
+
+https://stocksrevenue.netlify.app/
+
+# Salient features are
+
+- Built using ReactJS.
+- Have an input field to take the price of one stock when the user bought it
+- Have an input field to take the quantity of the stocks
+- Have an input field to take the current price per stock
+- Show the total profit or loss made by the user in percentage and absolute value
+- Change backgroud accordingly if profit or loss is greater than 50%
 
 ## Available Scripts
 

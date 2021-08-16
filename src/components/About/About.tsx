@@ -3,19 +3,37 @@ const About = () => {
   return (
     <div className="bcard mid-section">
       <header className="head">
-        <h1>Learning Recommendation</h1>
+        <h1>About</h1>
       </header>
       <section className="about">
-        This is a simple app create using Typescript and ReactJS Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Beatae iste expedita
-        debitis perspiciatis! Quos, expedita numquam. Delectus, corporis natus
-        similique facere at minima, officia eum dolore tenetur est maxime quam
-        voluptates! Laborum itaque amet quod vero odit ea voluptates officia vel
-        voluptatem, fugiat ratione rem nihil labore odio nobis deleniti iste
-        facilis nam repudiandae. Facilis quod dolore ab deleniti, debitis esse
-        repudiandae obcaecati adipisci suscipit excepturi, nesciunt architecto
-        delectus voluptatum ipsa itaque explicabo ullam quae sapiente quam,
-        inventore reprehenderit ea?
+        <h1 id="description">Description</h1>
+        <p>
+          This is a web app that calculate net and percent profit or loss and a
+          trade give prices and quantity of stocks. Built using ReactJS.
+        </p>
+        <h1 id="live-link">Github Link</h1>
+        <p>
+          <a href="https://github.com/SJTGSHIVAM/profit_loss_mark14">
+            https://github.com/SJTGSHIVAM/profit_loss_mark14
+          </a>
+        </p>
+        <h1 id="salient-features-are">Salient features are</h1>
+        <ul className="about-feature">
+          <li>Built using ReactJS.</li>
+          <li>
+            Have an input field to take the price of one stock when the user
+            bought it
+          </li>
+          <li>Have an input field to take the quantity of the stocks</li>
+          <li>Have an input field to take the current price per stock</li>
+          <li>
+            Show the total profit or loss made by the user in percentage and
+            absolute value
+          </li>
+          <li>
+            Change backgroud accordingly if profit or loss is greater than 50%
+          </li>
+        </ul>
       </section>
     </div>
   );
