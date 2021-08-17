@@ -14,11 +14,11 @@ const About = () => {
         <h1 id="live-link">Github Link</h1>
         <p>
           <a href="https://github.com/SJTGSHIVAM/profit_loss_mark14">
-            https://github.com/SJTGSHIVAM/profit_loss_mark14
+            Click here
           </a>
         </p>
         <h1 id="salient-features-are">Salient features are</h1>
-        <ul className="about-feature">
+        <ol className="">
           <li>Built using ReactJS.</li>
           <li>
             Have an input field to take the price of one stock when the user
@@ -33,7 +33,7 @@ const About = () => {
           <li>
             Change backgroud accordingly if profit or loss is greater than 50%
           </li>
-        </ul>
+        </ol>
       </section>
     </div>
   );
